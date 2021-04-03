@@ -17,7 +17,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0",
-    "validate": "^5.1.0"
+    "validate": "^5.1.0",
+    "validator": "^13.5.2"
   },
   "devDependencies": {
     "eslint": "^7.23.0",

@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const app= new express();
 const TourRoute =require('./routes/TourRoutes');
 const UserRoute =require('./routes/UserRoutes');
+const CommentRoute =require('./routes/commentRoutes');
 
 
 const fs = require('fs');
@@ -40,4 +41,5 @@ next();
 
 app.use("/api/v1/tours",TourRoute);
 app.use("/api/v1/users", UserRoute);
+app.use("/api/v1/comment", CommentRoute);
 module.exports= app;

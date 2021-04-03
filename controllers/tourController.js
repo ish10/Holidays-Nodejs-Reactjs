@@ -1,4 +1,4 @@
-const { request } = require('express');
+
 const Tour = require('../Model/tourModel');
 
 exports.aliasTopTours = (req, res, next) => {
