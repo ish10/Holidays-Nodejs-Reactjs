@@ -4,13 +4,21 @@ const app= new express();
 const TourRoute =require('./routes/TourRoutes');
 const UserRoute =require('./routes/UserRoutes');
 const CommentRoute =require('./routes/commentRoutes');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
+
+
+// allow cors origin requests
+
+app.use(cors());
 
 const fs = require('fs');
 if (process.env.NODE_ENV === 'development') {
 app.use(morgan('dev'));
 }
 app.use(express.json());
+app.use(cookieParser());
 app.use((req,res,next)=>{
 req.reqTime = new Date().toISOString();
 next();

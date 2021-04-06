@@ -83,11 +83,16 @@ const mongoose = require('mongoose');
                 toObject: { virtuals: true }
               }
             );
-            
+            tourSchema.virtual('comments', {
+              ref: 'Comment',
+              foreignField: 'tour',
+              localField: '_id'
+            });
+           
             tourSchema.virtual('durationWeeks').get(function() {
               return this.duration / 7;
             });
-            
+           
             // DOCUMENT MIDDLEWARE: runs before .save() and .create()
             
             
